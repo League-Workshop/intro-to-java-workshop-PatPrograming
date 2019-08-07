@@ -2,8 +2,7 @@ package section3;
 
 import javax.swing.JOptionPane;
 
-public class MadlibsOfTheAmazon {
-	
+public class SpeakMadlib {
 	public static void main(String[] args) {
 		// Put this sentence in a pop up:
 		// If you find yourself having to cross a piranha-infested river, here's how to do it...
@@ -30,7 +29,19 @@ JOptionPane.showMessageDialog(null, "Piranhas are more " +name+ " during the day
 		"Piranhas are attracted to fresh " + name1 + " and will most likely take a bit out of your " +name2+ " if you" +name3+ ". "+
 		"Whatever you do, if you have an open wound, try to find another way to get back to the " +name4+ ". "+
 		"Good luck!");
-
+String story=( "Piranhas are more " +name+ " during the day, so cross the river at night. "+
+		"Piranhas are attracted to fresh " + name1 + " and will most likely take a bit out of your " +name2+ " if you" +name3+ ". "+
+		"Whatever you do, if you have an open wound, try to find another way to get back to the " +name4+ ". "+
+		"Good luck!");
+speak(story);
+	
 	}
+static void speak(String words) {
+	try {
+		Runtime.getRuntime().exec("say " + words).waitFor();
+	}
+	 catch (Exception e) {
+		 e.printStackTrace();
+	 }
 }
-
+}
